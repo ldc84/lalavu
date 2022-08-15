@@ -1,0 +1,28 @@
+// tab-type-1
+.tab-type-1 {
+  display:flex;
+  padding:6px;
+  background-color: #131313;
+  border-radius: 10px;
+  li {
+    a {
+      display:flex;
+      align-items: center;
+      justify-content: center;
+      height:44px;
+      padding: 0 31px;
+      color:#555;
+      font-size:rem(15);
+      letter-spacing: -0.45px;
+      border-radius: 10px;
+      transition: all .2s ease-in-out;
+      &:hover,
+      &.active {
+        color:#999;
+        font-weight:700;
+        background-color: #171717;
+        box-shadow: 0px 3px 5px 0 rgba(0, 0, 0, 0.33);
+      }
+    }
+  }
+}

@@ -1,0 +1,125 @@
+<!-- @@master = /template/master_default.html {"title":"가입경로 | "} -->
+
+<!-- @@block = contents -->
+<div class="login-join">
+  <h1 class="title-type-1">
+    마지막 단계예요!<br>
+    랄라뷰를 어떻게 알게 되셨나요?
+  </h1>
+  <form action="">
+    <div class="login-box">
+      <div class="form-input-1">
+        <a href="" class="select-button-1">가입 경로</a>
+        <span class="error-msg">이름을 입력해주세요.</span>
+      </div>
+      <div class="btn-fix-1">
+        <button type="button" effect="ripple" class="button color-1 block" id="btnConfirm">확인</button>
+      </div>
+    </div>
+  </form>
+</div>
+
+<div class="notification-box" id="noti1">
+  <div class="dim"></div>
+  <div class="notification-con">
+    <h2 class="title-type-2">가입경로를 선택해주세요</h2>
+    <ul class="sel-list-1">
+      <li><a href="">포털 사이트 검색</a></li>
+      <li><a href="">지인 추천</a></li>
+      <li><a href="">커뮤니티</a></li>
+      <li><a href="">캠페인 제안 연락</a></li>
+      <li><a href="">광고</a></li>
+      <li><a href="">기타</a></li>
+    </ul>
+  </div>
+</div>
+
+<div class="notification-box" id="noti2">
+  <div class="dim"></div>
+  <div class="notification-con">
+    <div class="check-con-box-1">
+      <p class="check-all">
+        <input type="checkbox" id="checkAll">
+        <label for="checkAll">전체 약관 동의</label>
+      </p>
+      <ul class="list">
+        <li>
+          <input type="checkbox" name="check" id="check1">
+          <label for="check1">서비스 이용약관에 동의합니다</label>
+        </li>
+        <li>
+          <input type="checkbox" name="check" id="check2">
+          <label for="check2">개인정보 수집 및 이용에 동의합니다</label>
+        </li>
+        <li>
+          <input type="checkbox" name="check" id="check3">
+          <label for="check3">캠페인 진행 알림 등 마케팅 수신에 동의합니다</label>
+        </li>
+      </ul>
+    </div>
+    <div class="btn-box-1">
+      <button type="button" effect="ripple" class="button color-1 block" id="btnCheckConfirm" disabled>확인</button>
+    </div>
+  </div>
+</div>
+
+<!-- @@close -->
+
+<!-- @@block = script -->
+<script>
+  $(function(){
+
+    var sel = $('.select-button-1');
+    var selList = $('.sel-list-1 a');
+    var btnConfirm = $('#btnConfirm');
+    var btnCheckConfirm = $('#btnCheckConfirm');
+    
+    // 가입경로 클릭시
+    sel.on('click', function(){    
+      $('#noti1').addClass('active');
+      return false;
+    });
+    
+    // 가입경로 선택시
+    selList.on('click', function(){ 
+      var $this = $(this);
+      sel.addClass('choice').text($this.text());
+      $('#noti1').removeClass('active');
+      return false;
+    });
+    
+    // 전체약관 popup
+    btnConfirm.on('click', function(){
+      $('#noti2').addClass('active');
+      return false;
+    });
+
+    // checkbox
+    $("#checkAll").click(function() {
+      if($("#checkAll").is(":checked")) {
+        $("input[name=check]").prop("checked", true);
+        btnCheckConfirm.attr('disabled', false);
+      } else {
+        $("input[name=check]").prop("checked", false);
+        btnCheckConfirm.attr('disabled', true);
+      }
+    });
+    
+    $("input[name=check]").click(function() {
+      var total = $("input[name=check]").length;
+      var checked = $("input[name=check]:checked").length;
+      
+      if(total != checked) {
+        $("#checkAll").prop("checked", false);
+        btnCheckConfirm.attr('disabled', true);
+      } else {
+        $("#checkAll").prop("checked", true); 
+        btnCheckConfirm.attr('disabled', false);
+      }
+    });
+
+
+
+  });
+</script>
+<!-- @@close -->

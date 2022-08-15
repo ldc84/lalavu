@@ -1,0 +1,36 @@
+// title
+.title-type-1 {
+  margin-bottom: 20px;
+  color: #050c16;
+  font-size: rem(24);
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -0.72px;
+  strong {
+    color: $color-point-1;
+  }
+}
+.title-type-2 {
+  margin-bottom: 20px;
+  color: #050c16;
+  font-size: rem(20);
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: -0.6px;
+}
+
+// text-coment
+.text-coment-1 {
+  color: #777;
+  font-size: rem(14);
+  line-height: 1.2;
+  letter-spacing: -0.42px;
+}
+
+// text-type
+.text-type-1 {
+  color: #777;
+  font-size: rem(14);
+  line-height: 1.29;
+  letter-spacing: -0.42px;
+}

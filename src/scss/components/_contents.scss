@@ -1,0 +1,29 @@
+// login-join
+.login-join {
+  padding: 84px 0 0 0;
+  &.complete {
+    flex: 1;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 0 110px 0;
+  }
+}
+
+.login-box {
+  margin-top: 80px;
+}
+
+// sel-list
+.sel-list-1 {
+  li {
+    margin: 10px 0;
+    a {
+      color: #777;
+      font-size: rem(14);
+      line-height: 1.2;
+      letter-spacing: -0.42px;
+    }
+  }
+}

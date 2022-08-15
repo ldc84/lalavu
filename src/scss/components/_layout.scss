@@ -1,0 +1,73 @@
+// CSS Grid layout
+html,
+body {
+  height: 100%;
+}
+
+body {
+
+  background-color:#fff;
+
+  &.over-hidden {
+    overflow: hidden;
+  }
+}
+
+#defaultWrap {
+  display: flex;
+  flex-flow: column;
+  min-height: 100%;
+  padding: 0 16px;
+}
+
+// wrap
+#wrap {
+
+}
+
+
+.notification-box {
+  .dim {
+    display: none;
+    position: fixed;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    background-color:rgba(0,0,0,0.5);
+    z-index: 10;
+  }
+  .notification-con {
+    position: fixed;
+    left:0;
+    right:0;
+    bottom:-100%;
+    padding: 33px 16px;
+    background-color:#fff;
+    border-radius: 12px 12px 0 0;
+    z-index: 11;
+    transition: all .2s ease-in-out;
+  }
+
+  // active
+  &.active {
+    .dim {
+      display: block;
+    }
+    .notification-con {
+      bottom: 0;
+    }
+  }
+}
+
+// container
+.container {
+  max-width:1136px;
+  margin:0 auto;
+}
+
+// contents
+#contents {
+  width: 1575px;
+  padding:10vh 0 30px 470px;
+}
