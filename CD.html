@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <title>가입경로 | DRAG-MOUSE</title>
+
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+  <meta name="format-detection" content="telephone=no">
+  <!-- <link rel="alternate" href="http://" hreflang="ko" /> -->
+
+  <meta property="og:title" content="">
+  <meta property="og:description" content="">
+  <meta property="og:image" content="">
+  <meta property="og:url" content="">
+
+  <link rel="apple-touch-icon" sizes="57x57" href="./apple-icon-57x57.png">
+	<link rel="apple-touch-icon" sizes="60x60" href="./apple-icon-60x60.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="./apple-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="76x76" href="./apple-icon-76x76.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="./apple-icon-114x114.png">
+	<link rel="apple-touch-icon" sizes="120x120" href="./apple-icon-120x120.png">
+	<link rel="apple-touch-icon" sizes="144x144" href="./apple-icon-144x144.png">
+	<link rel="apple-touch-icon" sizes="152x152" href="./apple-icon-152x152.png">
+	<link rel="apple-touch-icon" sizes="180x180" href="./apple-icon-180x180.png">
+	<link rel="icon" type="image/png" sizes="192x192"  href="./android-icon-192x192.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="./favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="96x96" href="./favicon-96x96.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="./favicon-16x16.png">
+	<link rel="manifest" href="./manifest.json">
+	<meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="./ms-icon-144x144.png">
+  
+  <link rel="stylesheet" href="./css/style.css?t=1660575099886">
+
+</head>
+
+<body>
+
+  <div id="defaultWrap">
+<!-- start contents -->
+<div class="login-join">
+  <h1 class="title-type-1">
+    마지막 단계예요!<br>
+    랄라뷰를 어떻게 알게 되셨나요?
+  </h1>
+  <form action="">
+    <div class="login-box">
+      <div class="form-input-1">
+        <a href="" class="select-button-1">가입 경로</a>
+        <span class="error-msg">이름을 입력해주세요.</span>
+      </div>
+      <div class="btn-fix-1">
+        <button type="button" effect="ripple" class="button color-1 block" id="btnConfirm">확인</button>
+      </div>
+    </div>
+  </form>
+</div>
+
+<div class="notification-box" id="noti1">
+  <div class="dim"></div>
+  <div class="notification-con">
+    <h2 class="title-type-2">가입경로를 선택해주세요</h2>
+    <ul class="sel-list-1">
+      <li><a href="">포털 사이트 검색</a></li>
+      <li><a href="">지인 추천</a></li>
+      <li><a href="">커뮤니티</a></li>
+      <li><a href="">캠페인 제안 연락</a></li>
+      <li><a href="">광고</a></li>
+      <li><a href="">기타</a></li>
+    </ul>
+  </div>
+</div>
+
+<div class="notification-box" id="noti2">
+  <div class="dim"></div>
+  <div class="notification-con">
+    <div class="check-con-box-1">
+      <p class="check-all">
+        <input type="checkbox" id="checkAll">
+        <label for="checkAll">전체 약관 동의</label>
+      </p>
+      <ul class="list">
+        <li>
+          <input type="checkbox" name="check" id="check1">
+          <label for="check1">서비스 이용약관에 동의합니다</label>
+        </li>
+        <li>
+          <input type="checkbox" name="check" id="check2">
+          <label for="check2">개인정보 수집 및 이용에 동의합니다</label>
+        </li>
+        <li>
+          <input type="checkbox" name="check" id="check3">
+          <label for="check3">캠페인 진행 알림 등 마케팅 수신에 동의합니다</label>
+        </li>
+      </ul>
+    </div>
+    <div class="btn-box-1">
+      <button type="button" effect="ripple" class="button color-1 block" id="btnCheckConfirm" disabled>확인</button>
+    </div>
+  </div>
+</div>
+
+
+<!-- end contents -->
+  </div>
+
+  <!-- jquery cdn -->
+  <script src="./js/jquery-1.12.4.js?t=1660575099886"></script>
+  <script src="./js/slick.min.js?t=1660575099886"></script>
+  <script src="./js/ui_js.js?t=1660575099886"></script>
+
+<!-- start script -->
+<script>
+  $(function(){
+
+    var sel = $('.select-button-1');
+    var selList = $('.sel-list-1 a');
+    var btnConfirm = $('#btnConfirm');
+    var btnCheckConfirm = $('#btnCheckConfirm');
+    
+    // 가입경로 클릭시
+    sel.on('click', function(){    
+      $('#noti1').addClass('active');
+      return false;
+    });
+    
+    // 가입경로 선택시
+    selList.on('click', function(){ 
+      var $this = $(this);
+      sel.addClass('choice').text($this.text());
+      $('#noti1').removeClass('active');
+      return false;
+    });
+    
+    // 전체약관 popup
+    btnConfirm.on('click', function(){
+      $('#noti2').addClass('active');
+      return false;
+    });
+
+    // checkbox
+    $("#checkAll").click(function() {
+      if($("#checkAll").is(":checked")) {
+        $("input[name=check]").prop("checked", true);
+        btnCheckConfirm.attr('disabled', false);
+      } else {
+        $("input[name=check]").prop("checked", false);
+        btnCheckConfirm.attr('disabled', true);
+      }
+    });
+    
+    $("input[name=check]").click(function() {
+      var total = $("input[name=check]").length;
+      var checked = $("input[name=check]:checked").length;
+      
+      if(total != checked) {
+        $("#checkAll").prop("checked", false);
+        btnCheckConfirm.attr('disabled', true);
+      } else {
+        $("#checkAll").prop("checked", true); 
+        btnCheckConfirm.attr('disabled', false);
+      }
+    });
+
+
+
+  });
+</script>
+
+<!-- end script -->
+</body>
+
+</html>

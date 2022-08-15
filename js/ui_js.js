@@ -1,0 +1,1 @@
+jQuery,document.querySelectorAll('[effect="ripple"]').forEach(o=>{o.addEventListener("click",t=>{t=t.touches?t.touches[0]:t;var e=o.getBoundingClientRect(),c=2*Math.sqrt(Math.pow(e.width,2)+Math.pow(e.height,2));o.style.cssText="--s: 0; --o: 1;",o.offsetTop,o.style.cssText=`--t: 1; --o: 0; --d: ${c}; --x:${t.clientX-e.left}; --y:${t.clientY-e.top};`})});
