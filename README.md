@@ -1,18 +1,18 @@
-# drag-mouse
-drag-mouse publishing
+# lalavu
+lalavu publishing
 
 
 ## Installation
 To install on any Linux, Mac OS or Windows system, ensure [Node.js](https://nodejs.org/) is installed then clone the repository:
 
 ```bash
-git clone https://github.com/ldc84/drag-mouse.git
+git clone https://github.com/ldc84/lalavu.git
 ```
 
 Navigate to the folder:
 
 ```bash
-cd drag-mouse
+cd lalavu
 ```
 
 Install dependencies:
