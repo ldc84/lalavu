@@ -50,6 +50,7 @@
   input[type="text"],
   input[type="password"],
   input[type="number"],
+  input[type="tel"],
   select {
     position: relative;
     width: 100%;
@@ -126,7 +127,8 @@
       width: 16px;
       height: 16px;
       margin-top: -8px;
-      background-color: #fafafa;
+      background: url("../images/ico_arrow_down01.svg") no-repeat center center;
+      background-size: cover;
     }
 
     &:active,
@@ -144,12 +146,14 @@
   input[type="text"]:focus,
   input[type="password"]:focus,
   input[type="number"]:focus,
+  input[type="tel"]:focus,
   select:focus {
     border-color: $color-point-1;
   }
   input[type="text"]:focus + .label,
   input[type="password"]:focus + .label,
   input[type="number"]:focus + .label,
+  input[type="tel"]:focus + .label,
   select:focus + .label {
     color: $color-point-1;
   }
@@ -158,6 +162,8 @@
   input[type="text"]:valid + .label,
   input[type="number"]:focus + .label,
   input[type="number"]:valid + .label,
+  input[type="tel"]:focus + .label,
+  input[type="tel"]:valid + .label,
   input[type="password"]:focus + .label,
   input[type="password"]:valid + .label,
   select + .label {
@@ -169,6 +175,7 @@
     input[type="text"],
     input[type="password"],
     input[type="number"],
+    input[type="tel"],
     select {
       border-bottom-color: $color-point-2;
     }
@@ -185,6 +192,7 @@
     input[type="text"],
     input[type="password"],
     input[type="number"],
+    input[type="tel"],
     select {
       border-bottom-color: $color-point-1;
     }
@@ -723,14 +731,14 @@
     opacity:0;
   }
   label {
-    display:inline-block;
+    display:block;
     padding:0 0 0 24px;
     line-height: 1.2;
   }
 
   .check-all {
     position:relative;
-    margin-bottom: 15px;
+    margin-bottom: 22px;
     label {
       color:#050c16;
       font-size:rem(20);
@@ -746,7 +754,7 @@
 
   .list {
     li {
-      margin: 8px 0;
+      margin: 0 0 15px 0;
       position:relative;
       label {
         color:#777;
@@ -754,6 +762,17 @@
         letter-spacing: -0.42px;
         background:url("../images/ico_checkbox_off.svg") no-repeat 0 center;
         background-size:16px 16px;
+        &:after {
+          content:'';
+          display: block;
+          position: absolute;
+          top: 50%;
+          right: 4px;
+          width: 5px;
+          height: 7px;
+          margin-top: -3px;
+          background-color: #aaa;
+        }
       }
       input[type=checkbox]:checked + label {
         background-image:url("../images/ico_checkbox_on.svg");

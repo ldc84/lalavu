@@ -64,7 +64,9 @@ body {
 input,
 select,
 textarea {
+  padding: 0;
   font-family: $font-main;
+  border-radius: 0;
 }
 
 h1,
