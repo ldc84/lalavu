@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <title>회원정보 수정 | 랄라뷰</title>
+
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+  <meta name="format-detection" content="telephone=no">
+  <!-- <link rel="alternate" href="http://" hreflang="ko" /> -->
+
+  <meta property="og:title" content="">
+  <meta property="og:description" content="">
+  <meta property="og:image" content="">
+  <meta property="og:url" content="">
+
+  <link rel="apple-touch-icon" sizes="57x57" href="./apple-icon-57x57.png">
+	<link rel="apple-touch-icon" sizes="60x60" href="./apple-icon-60x60.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="./apple-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="76x76" href="./apple-icon-76x76.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="./apple-icon-114x114.png">
+	<link rel="apple-touch-icon" sizes="120x120" href="./apple-icon-120x120.png">
+	<link rel="apple-touch-icon" sizes="144x144" href="./apple-icon-144x144.png">
+	<link rel="apple-touch-icon" sizes="152x152" href="./apple-icon-152x152.png">
+	<link rel="apple-touch-icon" sizes="180x180" href="./apple-icon-180x180.png">
+	<link rel="icon" type="image/png" sizes="192x192"  href="./android-icon-192x192.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="./favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="96x96" href="./favicon-96x96.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="./favicon-16x16.png">
+	<link rel="manifest" href="./manifest.json">
+	<meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="./ms-icon-144x144.png">
+  
+  <link rel="stylesheet" href="./css/style.css?t=1661262602156">
+
+</head>
+
+<body>
+
+  <div id="defaultWrap">
+<!-- start contents -->
+<div id="memberModify">
+
+  <h2 class="title-type-3">회원정보 수정</h2>
+
+  <p class="mem-modify-text01">
+    김민준님의 현재 등급은 <strong>패밀리</strong>입니다.
+  </p>
+
+  <ul class="tab-type-1 two">
+    <li><a href="#defaultInfo" class="active">기본 정보</a></li>
+    <li><a href="#addInfo">추가 정보</a></li>
+  </ul>
+
+  <!-- 기본정보 -->
+  <div class="member-info-con" id="defaultInfo">
+    <form action="" class="mt-20">
+
+      <label for="pu-name" class="text-label">성함</label>
+      <div class="form-input-2">
+        <input type="text" id="pu-name">
+      </div>
+
+      <label for="pu-phone" class="text-label">연락처</label>
+      <div class="form-input-2">
+        <input type="tel" id="pu-phone">
+      </div>
+
+      <label for="pu-email" class="text-label">네이버 이메일</label>
+      <div class="form-input-2">
+        <div class="w50">
+          <input type="text" id="pu-email">
+        </div>
+        <div class="w50">
+          <input type="text" value="@naver.com" disabled>
+        </div>
+      </div>
+
+      <label class="text-label">배송 주소</label>
+      <div class="form-input-2 mb-1">
+        <div class="w75">
+          <input type="text" disabled>
+        </div>
+        <div class="w25">
+          <button type="button" effect="ripple" class="button size-sm-2 color-4 block">주소 검색</button>
+        </div>
+      </div>
+      <div class="form-input-2 mb-1">
+        <input type="text" disabled>
+      </div>
+      <div class="form-input-2">
+        <input type="text" placeholder="상세 주소">
+      </div>
+  
+      <div class="btn-fix-1">
+        <button type="button" effect="ripple" class="button color-1 block" id="btnSave">저장하기</button>
+      </div>
+    </form>
+  </div>
+  <!-- //기본정보 -->
+
+  <!-- 추가정보 -->
+  <div class="member-info-con" id="addInfo" style="display:none;">
+    <form action="" class="mt-20">
+
+      <label for="pu-blog" class="text-label">내블로그</label>
+      <div class="form-input-2">
+        <input type="text" id="pu-blog">
+      </div>
+
+      <label for="pu-subject" class="text-label">블로그 주제 설정</label>
+      <div class="form-input-2">
+        <input type="text" id="pu-subject">
+      </div>
+
+      <label for="pu-instagram" class="text-label">내 인스타그램</label>
+      <div class="form-input-2">
+        <input type="text" id="pu-instagram">
+      </div>
+
+      <label for="pu-birth" class="text-label">생년월일</label>
+      <div class="form-input-2">
+        <input type="date" id="pu-birth">
+      </div>
+
+      <p class="text-label">성별</p>
+      <div class="form-radio-box-1">
+        <div class="form-radio-1">
+          <div>
+            <input type="radio" name="pu-sex" id="pu-sex-male" checked>
+            <label for="pu-sex-male">남성</label>
+          </div>
+          <div>
+            <input type="radio" name="pu-sex" id="pu-sex-female">
+            <label for="pu-sex-female">여성</label>
+          </div>
+        </div>
+      </div>
+
+      <p class="text-label">거주 지역</p>
+      <div class="form-input-2">
+        <div class="w50">
+          <select>
+            <option value="">서울</option>
+          </select>
+        </div>
+        <div class="w50">
+          <select>
+            <option value="">마포구</option>
+          </select>
+        </div>
+      </div>
+
+      <p class="text-label">결혼 여부</p>
+      <div class="form-radio-box-1">
+        <div class="form-radio-1">
+          <div>
+            <input type="radio" name="pu-marry" id="pu-marry01" checked>
+            <label for="pu-marry01">미혼</label>
+          </div>
+          <div>
+            <input type="radio" name="pu-marry" id="pu-marry02">
+            <label for="pu-marry02">기혼</label>
+          </div>
+        </div>
+      </div>
+
+      <p class="text-label">자녀 여부</p>
+      <div class="form-radio-box-1">
+        <div class="form-radio-1">
+          <div>
+            <input type="radio" name="pu-child" id="pu-child01" checked>
+            <label for="pu-child01">없음</label>
+          </div>
+          <div>
+            <input type="radio" name="pu-child" id="pu-child02">
+            <label for="pu-child02">있음</label>
+          </div>
+        </div>
+        <div class="take-box">
+          <div class="form-input-2 mt-1 mb-2">
+            <div class="w50">
+              <span class="txt-1">첫째 나이</span>
+            </div>
+            <div class="w50 in-text-1">
+              <input type="number" placeholder="나이를 입력해주세요">
+              <span class="txt-1">세</span>
+            </div>
+          </div>
+          <div class="form-input-2 mb-2">
+            <div class="w50">
+              <span class="txt-1">둘째 나이</span>
+            </div>
+            <div class="w50 in-text-1">
+              <input type="number" placeholder="나이를 입력해주세요">
+              <span class="txt-1">세</span>
+            </div>
+          </div>
+          <button type="button" class="button size-sm-3 color-5 block">+ 추가</button>
+        </div>
+      </div>
+
+      <p class="text-label">반려동물</p>
+      <div class="form-radio-box-1">
+        <div class="form-radio-1">
+          <div>
+            <input type="radio" name="pu-pet" id="pu-pet01" checked>
+            <label for="pu-pet01">없음</label>
+          </div>
+          <div>
+            <input type="radio" name="pu-pet" id="pu-pet02">
+            <label for="pu-pet02">있음</label>
+          </div>
+        </div>
+        <div class="take-box">
+          <div class="form-input-2 mt-1 mb-2">
+            <div class="w50">
+              <select>
+                <option value="">강아지</option>
+              </select>
+            </div>
+            <div class="w50 in-text-1">
+              <input type="number" placeholder="몇 마리인가요?">
+              <span class="txt-1">마리</span>
+            </div>
+          </div>
+          <div class="form-input-2 mb-2">
+            <div class="w50">
+              <select>
+                <option value="">고양이</option>
+              </select>
+            </div>
+            <div class="w50 in-text-1">
+              <input type="number" placeholder="몇 마리인가요?">
+              <span class="txt-1">마리</span>
+            </div>
+          </div>
+          <button type="button" class="button size-sm-3 color-5 block">+ 추가</button>
+        </div>
+      </div>
+
+      <div class="btn-fix-1">
+        <button type="button" effect="ripple" class="button color-1 block">저장하기</button>
+      </div>
+
+    </form>
+  </div>
+  <!-- //추가정보 -->
+
+</div>
+
+<div class="notification-box" id="blogAddress">
+  <div class="dim"></div>
+  <div class="notification-con">
+    <h2 class="title-type-2">입력하신 주소가 회원님이 맞으신가요?</h2>
+    <p class="text-type-1">
+      블로그나 인스타그램 계정이 본인의 채널이 아닌 경우<br>
+      모니터링 시스템에 의해 적발, 형사 처벌될 수 있습니다
+    </p>
+    <button type="button" effect="ripple" class="button color-text block mt-20">다시 확인할게요</button>
+    <button type="button" effect="ripple" class="button color-1 block">네, 제가 맞습니다</button>
+  </div>
+</div>
+
+<div class="notification-box" id="blogSubject">
+  <div class="dim"></div>
+  <div class="notification-con">
+    <h2 class="title-type-2">블로그 주제를 선택해주세요</h2>
+    <ul class="blogsubject-list">
+      <li><a href="">맛집</a></li>
+      <li><a href="">뷰티/미용</a></li>
+      <li><a href="">화장품</a></li>
+      <li><a href="">여행/숙박</a></li>
+      <li><a href="">생활/리빙</a></li>
+      <li><a href="">육아</a></li>
+      <li><a href="">디지털</a></li>
+      <li><a href="">패션</a></li>
+      <li><a href="">도서</a></li>
+      <li><a href="">식품</a></li>
+      <li><a href="">교육</a></li>
+      <li><a href="">IT</a></li>
+      <li><a href="">일상</a></li>
+      <li><a href="">방송/연예</a></li>
+      <li><a href="">게임</a></li>
+      <li><a href="">헬스</a></li>
+      <li><a href="">비즈니스</a></li>
+      <li><a href="">반려동물</a></li>
+      <li><a href="">스포츠</a></li>
+      <li><a href="">기타</a></li>
+    </ul>
+    <button type="button" effect="ripple" class="button color-1 block" id="blogSubjectSave">저장</button>
+  </div>
+</div>
+
+
+<!-- end contents -->
+  </div>
+
+  <!-- jquery cdn -->
+  <script src="./js/jquery-1.12.4.js?t=1661262602156"></script>
+  <script src="./js/slick.min.js?t=1661262602156"></script>
+  <script src="./js/ui_js.js?t=1661262602156"></script>
+
+<!-- start script -->
+<script>
+  $(function(){
+
+    var tab = $('.tab-type-1');
+    var tabLink = tab.find('a');
+
+    tabLink.on('click', function(){
+      var $this = $(this);
+      var href = $this.attr('href');
+
+      tabLink.removeClass('active');
+      $this.addClass('active');
+
+      $(href).show();
+      $(href).siblings('.member-info-con').hide();
+      return false;
+    });
+    
+    // 자녀여부
+    var child = $('[name="pu-child"]');
+    child.on('change', function(){
+      var $this = $(this);
+      var child02 = $('#pu-child02');
+      var radioBox = $this.closest('.form-radio-1');
+      var takeBox = radioBox.next('.take-box');
+
+      if(child02.prop('checked')) {
+        takeBox.show();
+      }else {
+        takeBox.hide();
+      }
+    });
+    
+    // 반려동물
+    var pet = $('[name="pu-pet"]');
+    pet.on('change', function(){
+      var $this = $(this);
+      var pet02 = $('#pu-pet02');
+      var radioBox = $this.closest('.form-radio-1');
+      var takeBox = radioBox.next('.take-box');
+
+      if(pet02.prop('checked')) {
+        takeBox.show();
+      }else {
+        takeBox.hide();
+      }
+    });
+    
+    // 블로그주소 확인
+    var blog = $('#pu-blog');    
+    blog.on('focusout', function(){    
+      if(blog.val() !== ''){
+        $('#blogAddress').addClass('active');
+      }
+    });
+
+    $('#blogAddress button').on('click', function(){
+      $('#blogAddress').removeClass('active');
+      return false;
+    });
+
+    // 블로그 주제설정
+    var subject = $('#pu-subject');    
+    var subjectList = $('.blogsubject-list a');
+    var subjectListArray = [];
+
+    subject.on('focusin', function(){          
+      $('#blogSubject').addClass('active');
+    });
+
+    subjectList.on('click', function(){
+      var $this = $(this);
+      $this.toggleClass('active');
+      return false;
+    });
+
+    $('#blogSubjectSave').on('click', function(){
+
+      subjectListArray = [];
+      
+      subjectList.each(function(){
+        var $this = $(this);
+        if($this.hasClass('active')){
+          subjectListArray.push($this.text());
+        }
+      });
+
+      var result = subjectListArray + ' 등 ' + subjectListArray.length + '개';
+      subject.val(result.replaceAll(',','/'));
+
+      $('#blogSubject').removeClass('active');
+      return false;
+    });
+
+  });
+</script>
+
+<!-- end script -->
+</body>
+
+</html>
