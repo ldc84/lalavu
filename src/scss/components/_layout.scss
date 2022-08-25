@@ -6,7 +6,7 @@ body {
 
 body {
 
-  background-color:#fff;
+  background-color:#EDF0F3;
 
   &.over-hidden {
     overflow: hidden;
@@ -16,8 +16,17 @@ body {
 #defaultWrap {
   display: flex;
   flex-flow: column;
+  max-width: 500px;
   min-height: 100%;
+  margin: 0 auto;
   padding: 0 16px;
+  background-color: #fff;
+  &.campaing-info {
+    padding-bottom: 87px;
+    #mainWrap {
+      background-color: #fff;
+    }
+  }
 }
 
 // wrap
@@ -42,6 +51,8 @@ body {
     left:0;
     right:0;
     bottom:-100%;
+    max-width: 500px;
+    margin: 0 auto;
     padding: 33px 16px;
     background-color:#fff;
     border-radius: 12px 12px 0 0;

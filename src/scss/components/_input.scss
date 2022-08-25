@@ -244,103 +244,139 @@
 
 // form-input-2
 .form-input-2 {
-  position: relative;
-  margin-top: 30px;
-  padding: 28px 0 0 0;
-  > input[type="text"],
-  > select,
-  > textarea {
-    position: relative;
+  display: flex;
+  margin-bottom: 28px;
+  padding: 0 0 0 0;
+
+  > div {
+    &.w50 {
+      width: 50%;
+      margin: 0 8px;
+      &:first-child {
+        margin-left: 0;
+      }
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+    &.w75 {
+      width: 75%;
+      margin: 0 8px 0 0;
+    }
+    &.w25 {
+      width: 25%;
+      margin: 0 0 0 8px;
+    }
+
+  }
+
+  input[type="text"],
+  input[type="password"],
+  input[type="tel"],
+  input[type="date"],
+  input[type="number"],
+  select {
     width: 100%;
-    height: 40px;
-    line-height: 40px;
-    padding: 0 15px 0 15px;
-    color: #aaa;
-    font-size: rem(14);
-    font-weight: 300;
-    letter-spacing: -0.42px;
-    border: 2px solid #444;
+    height: 43px;
+    line-height: 41px;
+    padding: 0 12px 0 12px;
+    color: #000;
+    font-size: rem(13);
+    letter-spacing: -0.39px;
+    border: 1px solid #eaeaea;
     background: none;
-    border-radius: 5px;
+    border-radius: 4px;
     outline: none;
     z-index: 2;
     resize: none;
+    appearance: none;
     transition: all .2s ease-in-out;
-    option[disabled] {
-      display: none;
+
+    &:focus {
+      border-color: $color-point-1;
     }
-  }
-  > .file-box {
-    display: flex;
-    justify-content: space-between;
-    position: relative;
-    width: 100%;
-    height: 40px;
-    line-height: 40px;
-    color: #aaa;
-    font-size: rem(14);
-    font-weight: 300;
-    letter-spacing: -0.42px;
-    border: 2px solid #444;
-    background: none;
-    border-radius: 5px;
-    outline: none;
-    z-index: 2;
-    transition: all .2s ease-in-out;
-    > input[type="text"] {
-      flex: 1;
-      padding: 0 15px 0 15px;
-      color: #777;
-      border: none;
-      background: none;
-    }
-    > input[type="file"] {
-      position: absolute;
-      top:0;
-      left:0;
-      right:0;
-      bottom:0;
-      opacity: 0;
-      cursor: pointer;
-    }
-    button[type="button"] {
-      height: 40px;
-      margin: -2px -2px -2px 0;
-      border-radius: 5px;
-    }
-  }
-  > span {
-    position: absolute;
-    left:0;
-    line-height: 1.2;
-    transition: all .2s ease-in-out;
-    &.label {
-      top:0;
-      color: #777;
-      font-size: rem(15);
-      letter-spacing: -0.45px;
+    
+    &[disabled] {
+      border-color: #fafafa;
+      background-color: #fafafa;
     }
   }
 
-  &.mt-0 {
-    margin-top: 0;
+  select {
+    background: url("../images/ico_arrow_down01.svg") no-repeat 96% center;
+    background-size: 8px auto;
+  }
+
+  .txt-1 {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    color: #000;
+    font-size: rem(13);
+    line-height: 1.2;
+    letter-spacing: -0.39px;
+  }
+
+
+  .in-text-1 {
+    position: relative;
+    input {
+      padding-right: 38px;
+    }
+    .txt-1 {
+      position: absolute;
+      top: 0;
+      right: 13px;
+    }
+  }
+
+  &.mb-1 {
+    margin-bottom: 12px;
+  }
+  &.mb-2 {
+    margin-bottom: 8px;
+  }
+  &.mt-1 {
+    margin-top: 8px;
+  }
+
+  ::placeholder {
+    color: #ccc;
   }
 }
 
-.form-input-3 {
-  input[type="text"] {
-    width: 100%;
-    height: 37px;
-    padding: 0 12px;
-    color: #aaa;
-    font-size: rem(14);
-    font-weight: 300;
-    line-height: 1.29;
-    letter-spacing: -0.28px;
-    background-color: #2a2a2a;
-    border:none;
-    border-radius: 5px;
-    outline: none;
+// form-radio
+.form-radio-box-1 {
+  margin-bottom: 28px;
+}
+.form-radio-1 {
+  display: flex;
+  padding: 1px;
+  background-color: #f3f7f9;
+  border-radius: 4px;
+  > div {
+    position: relative;
+    width: 50%;
+    input[type=radio] {
+      position: absolute;
+      top: 0;
+      left: 0;
+      opacity: 0;
+    }
+    label {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 43px;
+      color: #000;
+      font-size: rem(13);
+      line-height: 1.2;
+      letter-spacing: -0.39px;
+      border-radius: 4px;
+    }
+    input[type=radio]:checked + label {
+      background-color: #fff;
+    }
   }
 }
 
@@ -744,11 +780,11 @@
       font-size:rem(20);
       font-weight: 500;
       letter-spacing: -0.6px;
-      background:url("../images/ico_checkbox_off.svg") no-repeat 0 center;
-      background-size:16px 16px;
+      background:url("../images/ico_checkbox01_off.svg") no-repeat 0 center;
+      background-size:16px auto;
     }
     input[type=checkbox]:checked + label {
-      background-image:url("../images/ico_checkbox_on.svg");
+      background-image:url("../images/ico_checkbox01_on.svg");
     }
   }
 
@@ -760,8 +796,8 @@
         color:#777;
         font-size:rem(14);
         letter-spacing: -0.42px;
-        background:url("../images/ico_checkbox_off.svg") no-repeat 0 center;
-        background-size:16px 16px;
+        background:url("../images/ico_checkbox02_off.svg") no-repeat 3px center;
+        background-size:9px auto;
         &:after {
           content:'';
           display: block;
@@ -771,11 +807,12 @@
           width: 5px;
           height: 7px;
           margin-top: -3px;
-          background-color: #aaa;
+          background:url("../images/ico_arrow_right01.svg") no-repeat center center;
+          background-size: cover;
         }
       }
       input[type=checkbox]:checked + label {
-        background-image:url("../images/ico_checkbox_on.svg");
+        background-image:url("../images/ico_checkbox02_on.svg");
       }
     }
   }

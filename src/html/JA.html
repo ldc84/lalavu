@@ -1,0 +1,154 @@
+<!-- @@master = /template/master_default.html {"addClass": "campaing-info"} -->
+
+<!-- @@block = contents -->
+<div id="mainWrap">
+
+  <header class="header white">
+    <h1>랄라뷰 로고</h1>
+    <div class="info-box">
+      <a href="" class="mypage"></a>
+      <a href="" class="menu"></a>
+    </div>
+  </header>
+
+  <div class="product-box campaign-info">
+    <div class="image">
+      <img src="https://images.unsplash.com/photo-1546074177-ffdda98d214f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80" alt="">
+      <p class="dday">D-31</p>
+    </div>
+  </div>
+
+  <form action="">
+    <div class="campaign-detail-box">
+      
+      <h3>제공상품</h3>
+      <p>- 한돈구이 세트(8대/2.7kg/양념포함)</p>
+      <p>- 명품 LA갈비 세트 (3kg/양념포함)</p>
+
+      <label for="pu-phone" class="text-label mt-1">연락처</label>
+      <div class="form-input-2">
+        <input type="tel" id="pu-phone">
+      </div>
+
+      <label for="pu-email" class="text-label">네이버 이메일</label>
+      <div class="form-input-2">
+        <div class="w50">
+          <input type="text" id="pu-email">
+        </div>
+        <div class="w50">
+          <input type="text" value="@naver.com" disabled>
+        </div>
+      </div>
+      <label for="pu-email" class="text-label">콘텐츠 등록 채널</label>
+      <div class="form-input-2">
+        <div class="w50">
+          <span class="ico-naver01">
+            <img src="../images/ico_naver.png"
+            srcset="../images/ico_naver@2x.png 2x,
+                    ../images/ico_naver@3x.png 3x"
+            class="naver-icon">
+            gsdf12님의 블로그
+          </span>
+        </div>
+        <div class="w50 align-right">
+          <button type="button" effect="ripple" class="button size-xs-3 color-4">블로그 변경</button>
+        </div>
+      </div>
+
+      <label class="text-label">배송 주소</label>
+      <div class="form-input-2 mb-1">
+        <div class="w75">
+          <input type="text" disabled>
+        </div>
+        <div class="w25">
+          <button type="button" effect="ripple" class="button size-sm-2 color-4 block">주소 검색</button>
+        </div>
+      </div>
+      <div class="form-input-2 mb-1">
+        <input type="text" disabled>
+      </div>
+      <div class="form-input-2">
+        <input type="text" placeholder="상세 주소">
+      </div>
+    
+    
+    </div>
+
+    <div class="btn-fix-2">
+      <button type="button" effect="ripple" class="button color-1 block" id="btnApply">캠페인 신청</button>
+    </div>
+
+  </form>
+
+</div>
+
+
+<div class="notification-box" id="noti">
+  <div class="dim"></div>
+  <div class="notification-con">
+    <div class="check-con-box-1">
+      <p class="check-all">
+        <input type="checkbox" id="checkAll">
+        <label for="checkAll">전체 약관 동의</label>
+      </p>
+      <ul class="list">
+        <li>
+          <input type="checkbox" name="check" id="check1">
+          <label for="check1">초상권 및 콘텐츠 2차 활용 동의</label>
+        </li>
+        <li>
+          <input type="checkbox" name="check" id="check2">
+          <label for="check2">캠페인 유의사항 및 제3자 제공 동의</label>
+        </li>
+      </ul>
+    </div>
+    <div class="btn-box-1">
+      <button type="button" effect="ripple" class="button color-1 block" id="btnCheckConfirm" disabled>캠페인 신청</button>
+    </div>
+  </div>
+</div>
+
+<!-- @@close -->
+
+<!-- @@block = script -->
+<script>
+  $(function(){
+
+    var btnApply = $('#btnApply');
+    var btnCheckConfirm = $('#btnCheckConfirm');
+
+    // 전체약관 popup
+    btnApply.on('click', function(){
+      $('#noti').addClass('active');
+      return false;
+    });
+
+    // checkbox
+    $("#checkAll").click(function() {
+      if($("#checkAll").is(":checked")) {
+        $("input[name=check]").prop("checked", true);
+        btnCheckConfirm.attr('disabled', false);
+      } else {
+        $("input[name=check]").prop("checked", false);
+        btnCheckConfirm.attr('disabled', true);
+      }
+    });
+    
+    $("input[name=check]").click(function() {
+      var total = $("input[name=check]").length;
+      var checked = $("input[name=check]:checked").length;
+      
+      if(total != checked) {
+        $("#checkAll").prop("checked", false);
+        btnCheckConfirm.attr('disabled', true);
+      } else {
+        $("#checkAll").prop("checked", true); 
+        btnCheckConfirm.attr('disabled', false);
+      }
+    });
+
+
+
+  });
+</script>
+<!-- @@close -->
