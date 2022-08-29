@@ -56,6 +56,16 @@
   gap: 8px;
   margin-top: 40px;
 }
+.btn-box-2 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 26px;
+  border-top: 1px solid #eaecf0;
+  > div {
+    width: 50%;
+  }
+}
 
 // button
 button[type='button'].button,
@@ -109,6 +119,12 @@ input[type='submit'] {
     font-size: rem(13);
     border-radius: 4px;
   }
+  &.size-sm-4 {
+    height: 45px;
+    padding: 0 12px;
+    font-size: rem(16);
+    font-weight: 500;
+  }
 
   &.size-xs {
     height: 25px;
@@ -154,6 +170,14 @@ input[type='submit'] {
   }
   &.color-text {
     color:#777;
+    background-color: transparent;
+  }
+  &.color-text-2 {
+    color:$color-point-1;
+    background-color: transparent;
+  }
+  &.color-text-3 {
+    color: #aaa;
     background-color: transparent;
   }
 

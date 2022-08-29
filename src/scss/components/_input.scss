@@ -384,13 +384,9 @@
 // form-file-1
 .form-file-1 {
   position: relative;
-  display: flex;
-  justify-content: center;
-  height: 160px;
-  border: solid 2px #444;
-  background: url("../images/ico_cloud.svg") no-repeat center 50px;
-  background-size: 44px auto;
-  border-radius: 5px;
+  width: 100%;
+  background: url("../images/ico_clip.svg") no-repeat 98% center;
+  background-size: 13px auto;
   input[type="file"] {
     position: absolute;
     left:0;
@@ -399,6 +395,9 @@
     bottom:0;
     opacity: 0;
     cursor: pointer;
+  }
+  input[type="text"] {
+    padding-right: 30px;
   }
   .txt {
     padding-top:105px;

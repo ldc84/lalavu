@@ -1,0 +1,67 @@
+<!-- @@master = /template/master_default.html {"title":"종가집 순쌀누룽지 250g | "} -->
+
+<!-- @@block = contents -->
+<div id="memberModify">
+
+  <h2 class="title-type-3">종가집 순쌀누룽지 250g</h2>
+
+  <form action="" class="mt-20">
+
+    <label for="pu-select" class="text-label">포스팅 내 공정위 필수 문구를 기입하셨나요?</label>
+    <div class="form-input-2">
+      <select id="pu-select">
+        <option value="">(700포인트 추가 지급) 랄라뷰 문구(배너) 기입</option>
+      </select>
+    </div>
+
+    <label for="pu-link" class="text-label">포스팅 링크를 입력해주세요</label>
+    <div class="form-input-2">
+      <input type="text" id="pu-link" placeholder="포스팅 링크">
+    </div>
+
+    <p class="text-label">첨부할 자료가 있으면 등록해주세요</p>
+    <div class="form-input-2">
+      <div class="form-file-1">
+        <input type="text" id="fileName" placeholder="첨부된 파일이 없어요">
+        <input type="file" onchange="document.getElementById('fileName').value = this.value">
+      </div>
+    </div>
+
+    <div class="btn-fix-1">
+      <button type="button" effect="ripple" class="button color-1 block" id="btnSave">콘텐츠 등록</button>
+    </div>
+
+  </form>
+
+</div>
+
+<div class="notification-box" id="contentsNoti">
+  <div class="dim"></div>
+  <div class="notification-con">
+    <h2 class="title-type-2">가이드를 명확히 숙지하고 작성하셨나요?</h2>
+    <p class="text-type-1">
+      캠페인 미션 및 가이드 이행율이 떨어지면<br>
+      수정 요청이 발생할 수 있어요 
+    </p>
+    <div class="btn-box-1">
+      <button type="button" effect="ripple" class="button color-3 block">확인해볼게요</button>
+      <button type="button" effect="ripple" class="button color-1 block">네, 문제없어요</button>
+    </div>
+  </div>
+</div>
+<!-- @@close -->
+
+<!-- @@block = script -->
+<script>
+  $(function(){
+
+    // 콘텐츠등록
+    var btnContents = $('#btnSave');    
+    btnContents.on('click', function(){    
+      $('#contentsNoti').addClass('active');
+      return false;
+    });
+
+  });
+</script>
+<!-- @@close -->

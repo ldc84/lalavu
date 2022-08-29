@@ -22,43 +22,14 @@
     </div>
   </div>
   <div class="privacy-text">
-    <img src="../images/security.png"
-      srcset="../images/security@2x.png 2x,
-              ../images/security@3x.png 3x"
+    <img src="../images/ico_security.png"
+      srcset="../images/ico_security@2x.png 2x,
+              ../images/ico_security@3x.png 3x"
       class="security">
     개인정보 보호 모드 작동 중
   </div>
   <div class="btn-fix-1">
-    <button type="button" effect="ripple" class="button color-1 block" id="btnStart">신청하기</button>
+    <button type="button" effect="ripple" class="button color-1 block">신청하기</button>
   </div>
 </div>
-
-<div class="notification-box">
-  <div class="dim"></div>
-  <div class="notification-con">
-    <h2 class="title-type-2">인증번호를 보낼게요</h2>
-    <p class="text-type-1">
-      랄라뷰에 가입되어 있지 않은 번호예요<br>
-      회원가입을 위해 인증번호를 보낼게요
-    </p>
-    <button type="button" effect="ripple" class="button color-text block">아니요, 괜찮아요</button>
-    <button type="button" effect="ripple" class="button color-1 block">인증번호 받기</button>
-  </div>
-</div>
-
-<!-- @@close -->
-
-<!-- @@block = script -->
-<script>
-  $(function(){
-
-    // start button
-    var btnStart = $('#btnStart');    
-    btnStart.on('click', function(){    
-      $('.notification-box').addClass('active');
-      return false;
-    });
-
-  });
-</script>
 <!-- @@close -->
