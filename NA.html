@@ -35,7 +35,7 @@
 	<meta name="msapplication-TileColor" content="#ffffff">
   <meta name="msapplication-TileImage" content="./ms-icon-144x144.png">
   
-  <link rel="stylesheet" href="./css/style.css?t=1661522346077">
+  <link rel="stylesheet" href="./css/style.css?t=1663078373898">
 
 </head>
 
@@ -156,9 +156,21 @@
   </div>
 
   <div class="btn-fix-2">
-    <button type="button" effect="ripple" class="button color-1 block" id="btnApply">출금 신청</button>
+    <button type="button" effect="ripple" class="button color-1 block" id="btnWithdraw">출금 신청</button>
   </div>
 
+</div>
+
+<div class="notification-box" id="withdraw">
+  <div class="dim"></div>
+  <div class="notification-con">
+    <h2 class="title-type-2">128,600포인트를 출금 신청할까요?</h2>
+    <p class="text-type-1">
+      등록된 농협 계좌로 128,600포인트를 출금할게요
+    </p>
+    <button type="button" effect="ripple" class="button color-text block mt-40">아니요</button>
+    <button type="button" effect="ripple" class="button color-1 block">출금 신청</button>
+  </div>
 </div>
 
 <!-- end contents -->
@@ -185,9 +197,9 @@
   </div>
 
   <!-- jquery cdn -->
-  <script src="./js/jquery-1.12.4.js?t=1661522346077"></script>
-  <script src="./js/slick.min.js?t=1661522346077"></script>
-  <script src="./js/ui_js.js?t=1661522346077"></script>
+  <script src="./js/jquery-1.12.4.js?t=1663078373898"></script>
+  <script src="./js/slick.min.js?t=1663078373898"></script>
+  <script src="./js/ui_js.js?t=1663078373898"></script>
 
 <!-- start script -->
 <script>
@@ -205,6 +217,12 @@
 
       $(href).show();
       $(href).siblings('div').hide();
+      return false;
+    });
+
+    var btnWithdraw = $('#btnWithdraw');    
+    btnWithdraw.on('click', function(){    
+      $('#withdraw').addClass('active');
       return false;
     });
 

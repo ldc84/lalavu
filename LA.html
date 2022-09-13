@@ -35,7 +35,7 @@
 	<meta name="msapplication-TileColor" content="#ffffff">
   <meta name="msapplication-TileImage" content="./ms-icon-144x144.png">
   
-  <link rel="stylesheet" href="./css/style.css?t=1661522346072">
+  <link rel="stylesheet" href="./css/style.css?t=1663078373895">
 
 </head>
 
@@ -71,7 +71,22 @@
     개인정보 보호 모드 작동 중
   </div>
   <div class="btn-fix-1">
-    <button type="button" effect="ripple" class="button color-1 block">가이드 보기</button>
+    <button type="button" effect="ripple" class="button color-1 block" id="btnApply">가이드 보기</button>
+  </div>
+</div>
+
+<div class="notification-box" id="noti">
+  <div class="dim"></div>
+  <div class="notification-con">
+    <h2 class="title-type-2">랄라뷰에서 캠페인을 진행하셨었나요?</h2>
+    <p class="text-type-1">
+      랄라뷰에서 캠페인을 진행하신 분은 로그인을,<br>
+      처음이신 분은 회원가입을 도와드릴게요.
+    </p>
+    <div class="btn-box-1">
+      <button type="button" effect="ripple" class="button color-3 block">처음이예요</button>
+      <button type="button" effect="ripple" class="button color-1 block">랄라뷰 회원이예요</button>
+    </div>
   </div>
 </div>
 
@@ -79,12 +94,24 @@
   </div>
 
   <!-- jquery cdn -->
-  <script src="./js/jquery-1.12.4.js?t=1661522346072"></script>
-  <script src="./js/slick.min.js?t=1661522346072"></script>
-  <script src="./js/ui_js.js?t=1661522346072"></script>
+  <script src="./js/jquery-1.12.4.js?t=1663078373895"></script>
+  <script src="./js/slick.min.js?t=1663078373895"></script>
+  <script src="./js/ui_js.js?t=1663078373895"></script>
 
 <!-- start script -->
+<script>
+  $(function(){
 
+    // start button
+    var btnApply = $('#btnApply');
+    
+    btnApply.on('click', function(){    
+      $('#noti').addClass('active');
+      return false;
+    });
+
+  });
+</script>
 
 <!-- end script -->
 </body>
