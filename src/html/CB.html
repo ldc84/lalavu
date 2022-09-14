@@ -10,14 +10,16 @@
   </p>
   <form action="">
     <div class="login-box">
-      <div class="form-input-1">
-        <input type="password" required>
+      <div class="form-input-1 password-input">
+        <input type="password" id="pw" required>
         <span class="label">비밀번호</span>
+        <a href="#pw" class="pw-del"></a>
         <span class="error-msg">비밀번호를 입력해주세요.</span>
       </div>
-      <div class="form-input-1">
-        <input type="password" required>
+      <div class="form-input-1 password-input">
+        <input type="password" id="pwRe" required>
         <span class="label">비밀번호 확인</span>
+        <a href="#pwRe" class="pw-del"></a>
         <span class="error-msg">비밀번호를 확인해주세요.</span>
       </div>
       <div class="btn-fix-1">
@@ -26,4 +28,20 @@
     </div>
   </form>
 </div>
+<!-- @@close -->
+
+<!-- @@block = script -->
+<script>
+  $(function(){
+
+    var pwDel = $('.pw-del');
+    pwDel.on('click', function(){
+      var $this = $(this);
+      var href = $this.attr('href');
+      $(href).val('').focus();
+      return false;
+    });
+
+  });
+</script>
 <!-- @@close -->

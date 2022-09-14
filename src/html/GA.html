@@ -72,12 +72,13 @@
 
       <label for="pu-subject" class="text-label">블로그 주제 설정</label>
       <div class="form-input-2">
-        <input type="text" id="pu-subject">
+        <input type="text" id="pu-subject" readonly>
       </div>
 
       <label for="pu-instagram" class="text-label">내 인스타그램</label>
-      <div class="form-input-2">
-        <input type="text" id="pu-instagram">
+      <div class="form-input-2 input-instagram">
+        <input type="text" id="pu-instagram" required>
+        <span class="txt-tag">@</span>
       </div>
 
       <label for="pu-birth" class="text-label">생년월일</label>
@@ -202,7 +203,7 @@
       </div>
 
       <div class="btn-fix-1">
-        <button type="button" effect="ripple" class="button color-1 block">저장하기</button>
+        <button type="button" effect="ripple" class="button color-1 block" id="blogSave">저장하기</button>
       </div>
 
     </form>
@@ -219,7 +220,7 @@
       블로그나 인스타그램 계정이 본인의 채널이 아닌 경우<br>
       모니터링 시스템에 의해 적발, 형사 처벌될 수 있습니다
     </p>
-    <button type="button" effect="ripple" class="button color-text block mt-20">다시 확인할게요</button>
+    <button type="button" effect="ripple" class="button color-text block mt-40">다시 확인할게요</button>
     <button type="button" effect="ripple" class="button color-1 block">네, 제가 맞습니다</button>
   </div>
 </div>
@@ -306,17 +307,17 @@
     });
     
     // 블로그주소 확인
-    var blog = $('#pu-blog');    
-    blog.on('focusout', function(){    
-      if(blog.val() !== ''){
-        $('#blogAddress').addClass('active');
-      }
-    });
+    // var blog = $('#pu-blog');    
+    // blog.on('focusout', function(){    
+    //   if(blog.val() !== ''){
+    //     $('#blogAddress').addClass('active');
+    //   }
+    // });
 
-    $('#blogAddress button').on('click', function(){
-      $('#blogAddress').removeClass('active');
-      return false;
-    });
+    // $('#blogAddress button').on('click', function(){
+    //   $('#blogAddress').removeClass('active');
+    //   return false;
+    // });
 
     // 블로그 주제설정
     var subject = $('#pu-subject');    
@@ -349,6 +350,12 @@
 
       $('#blogSubject').removeClass('active');
       return false;
+    });
+
+    // 본인확인
+    var blogSave = $('#blogSave');
+    blogSave.on('click', function(){
+      $('#blogAddress').addClass('active');
     });
 
   });

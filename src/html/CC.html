@@ -12,18 +12,19 @@
         <span class="label">이름</span>
         <span class="error-msg">이름을 입력해주세요.</span>
       </div>
-      <div class="form-input-1">
+      <div class="form-input-1 gradation-1">
         <input type="text" required>
         <span class="label">블로그 주소</span>
         <span class="error-msg">블로그 주소를 입력해주세요.</span>
       </div>
-      <div class="form-input-1">
+      <div class="form-input-1 input-instagram">
         <input type="text" required>
         <span class="label">인스타그램 아이디</span>
+        <span class="txt-tag">@</span>
         <span class="error-msg">인스타그램 아이디를 입력해주세요.</span>
       </div>
       <div class="btn-fix-1">
-        <button type="button" effect="ripple" class="button color-1 block">확인</button>
+        <button type="button" effect="ripple" class="button color-1 block" id="btnOk">확인</button>
       </div>
     </div>
   </form>
@@ -32,15 +33,13 @@
 <div class="notification-box" id="noti">
   <div class="dim"></div>
   <div class="notification-con">
-    <h2 class="title-type-2">스팸함을 확인해보셨나요?</h2>
+    <h2 class="title-type-2">입력한 정보가 본인이 맞으신가요?</h2>
     <p class="text-type-1">
-      문자를 보내는 데 최대 1분이 걸릴 수도 있어요.<br>
-      스팸함에도 문자가 없다면 인증번호를 다시 받아주세요
+      블로그나 인스타그램 계정이 본인의 채널이 아닌 경우<br>
+      모니터링 시스템에 의해 적발, 형사 처벌될 수 있습니다
     </p>
-    <div class="btn-box-1">
-      <button type="button" effect="ripple" class="button color-3 block">다시 보내주세요</button>
-      <button type="button" effect="ripple" class="button color-1 block">확인해볼게요</button>
-    </div>
+    <button type="button" effect="ripple" class="button color-text block mt-40">다시 확인할게요</button>
+    <button type="button" effect="ripple" class="button color-1 block">네, 제가 맞습니다</button>
   </div>
 </div>
 
@@ -50,11 +49,8 @@
 <script>
   $(function(){
 
-    // start button
-    var btnLogin = $('#btnLogin');    
-    var btnNumNot = $('#btnNumberNoting');    
-    
-    btnNumNot.on('click', function(){    
+    var btnOk = $('#btnOk');    
+    btnOk.on('click', function(){    
       $('#noti').addClass('active');
       return false;
     });

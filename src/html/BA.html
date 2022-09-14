@@ -12,9 +12,10 @@
   </p>
   <form action="">
     <div class="login-box">
-      <div class="form-input-1">
-        <input type="password" required>
+      <div class="form-input-1 password-input">
+        <input type="password" id="pw" required>
         <span class="label">비밀번호</span>
+        <a href="#pw" class="pw-del"></a>
         <span class="error-msg">비밀번호를 입력해주세요.</span>
       </div>
       <div>
@@ -35,7 +36,7 @@
       비밀번호를 저장하면 랄라뷰에 들어올 때마다<br>
       로그인을 하지 않아도 돼요
     </p>
-    <button type="button" effect="ripple" class="button color-text block">아니요, 괜찮아요</button>
+    <button type="button" effect="ripple" class="button color-text block mt-40">아니요, 괜찮아요</button>
     <button type="button" effect="ripple" class="button color-1 block">저장하고 로그인</button>
   </div>
 </div>
@@ -48,7 +49,7 @@
       비밀번호를 초기화하기 위해 고객님의 연락처로<br>
       인증번호를 보낼게요
     </p>
-    <button type="button" effect="ripple" class="button color-text block">아니요, 괜찮아요</button>
+    <button type="button" effect="ripple" class="button color-text block mt-40">아니요, 괜찮아요</button>
     <button type="button" effect="ripple" class="button color-1 block">인증하고 비밀번호 변경</button>
   </div>
 </div>
@@ -70,6 +71,14 @@
     
     btnPW.on('click', function(){    
       $('#noti2').addClass('active');
+      return false;
+    });
+
+    var pwDel = $('.pw-del');
+    pwDel.on('click', function(){
+      var $this = $(this);
+      var href = $this.attr('href');
+      $(href).val('').focus();
       return false;
     });
 

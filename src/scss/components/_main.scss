@@ -44,10 +44,10 @@
         }
       }
       .mypage {
-        background-image: url("../images/ico_account01.svg");
+        background-image: url("./images/ico_account01.svg");
       }
       .notification {
-        background-image: url("../images/ico_noti01.svg");
+        background-image: url("./images/ico_noti01.svg");
         &.active {
           position: relative;
           &:after {
@@ -64,7 +64,7 @@
         }
       }
       .setting {
-        background-image: url("../images/ico_setting02.svg");
+        background-image: url("./images/ico_setting02.svg");
       }
     }
     &.white {
@@ -73,10 +73,10 @@
         color: #000;
       }
       .mypage {
-        background-image: url("../images/ico_account03.svg");
+        background-image: url("./images/ico_account03.svg");
       }
       .menu {
-        background-image: url("../images/ico_hambuger01.svg");
+        background-image: url("./images/ico_hambuger01.svg");
       }
     }
   }
@@ -124,16 +124,19 @@
 }
 
 .main-top-banner {
-  padding: 16px;
   .banner-inner {
     position: relative;
+    padding: 16px;
     img {
       width: 100%;
+      border-radius: 10px;
+      box-shadow: 0px 2px 12px 0 rgba(84, 84, 97, 0.16);
+      overflow: hidden;
     }
     .text-con {
       position: absolute;
-      top: 40px;
-      left: 20px;
+      top: 56px;
+      left: 36px;
       color: #050c16;
       font-size: rem(12);
       font-weight: 300;
@@ -185,7 +188,7 @@
         width: 5px;
         height: 7px;
         margin-top: -3px;
-        background:url("../images/ico_arrow_right01.svg") no-repeat center center;
+        background:url("./images/ico_arrow_right01.svg") no-repeat center center;
         background-size: cover;
       }
     }
@@ -349,7 +352,6 @@
 .main-banner01 {
   min-height: 100px;
   margin-bottom: 12px;
-  background-color: #495879;
   img {
     width: 100%;
   }
