@@ -44,10 +44,10 @@
         }
       }
       .mypage {
-        background-image: url("./images/ico_account01.svg");
+        background-image: url("../images/ico_account01.svg");
       }
       .notification {
-        background-image: url("./images/ico_noti01.svg");
+        background-image: url("../images/ico_noti01.svg");
         &.active {
           position: relative;
           &:after {
@@ -64,7 +64,7 @@
         }
       }
       .setting {
-        background-image: url("./images/ico_setting02.svg");
+        background-image: url("../images/ico_setting02.svg");
       }
     }
     &.white {
@@ -73,10 +73,10 @@
         color: #000;
       }
       .mypage {
-        background-image: url("./images/ico_account03.svg");
+        background-image: url("../images/ico_account03.svg");
       }
       .menu {
-        background-image: url("./images/ico_hambuger01.svg");
+        background-image: url("../images/ico_hambuger01.svg");
       }
     }
   }
@@ -188,7 +188,7 @@
         width: 5px;
         height: 7px;
         margin-top: -3px;
-        background:url("./images/ico_arrow_right01.svg") no-repeat center center;
+        background:url("../images/ico_arrow_right01.svg") no-repeat center center;
         background-size: cover;
       }
     }
