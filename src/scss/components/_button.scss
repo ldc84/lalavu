@@ -36,6 +36,17 @@
   margin: 0 auto;
   padding: 0 16px;
   z-index: 2;
+  transition: all .2s ease-in-out;
+  &.focus {
+    bottom: 0;
+    padding: 0;
+    button[type='button'].button, 
+    a.button, 
+    input[type='submit'] {
+      height: 46px;
+      border-radius: 0;
+    }
+  }
 }
 .btn-fix-2 {
   position: fixed;
@@ -47,6 +58,9 @@
   padding: 12px 16px 21px;
   background-color: #fff;
   z-index: 2;
+  &.type-absolute {
+    position: absolute;
+  }
 }
 
 .btn-box-1 {

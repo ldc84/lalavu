@@ -13,18 +13,20 @@
   });
 
   // drop layer
-  // $(function(){
-  //   var drop = $('[data-drop] > a');
+  $(function(){
+    var input = $('.focus-btn-custom');
+    var btnFix = $('.btn-fix-1');
     
-  //   drop.on('click', function(){
-  //     var $this = $(this);
-  //     var layer = $this.next('[class^="drop-layer"]');
+    input.on('focus', function(){
+      btnFix.addClass('focus');
+      return false;
+    });
 
-  //     $this.toggleClass('active');
-  //     layer.toggle();
-  //     return false;
-  //   });
-  // });
+    input.on('blur', function(){
+      btnFix.removeClass('focus');
+      return false;
+    });
+  });
 
 
 })(jQuery);
